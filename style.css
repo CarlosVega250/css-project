@@ -373,6 +373,12 @@
     }
   }
 
+  .mushroom-guide {
+    --card-title-font-size: var(--font-size-lg);
+    --card-title-color: var(--text-high-contrast);
+    --card-gap: 0.75rem;
+  }
+
   .card {
     display: grid;
     gap: var(--card-gap, 1rem);
@@ -388,6 +394,46 @@
   .card__title {
     font-size: var(--card-title-font-size, var(--font-size-heading-regular));
     color: var(--card-title-color, var(--text-brand));
+  }
+
+  .card__note {
+    background-color: var(--background-extra-light);
+    padding: 0.75rem;
+    border-radius: var(--border-radius-2);
+  }
+
+  .tag-list {
+    display: flex;
+    gap: 0.5rem;
+
+    li {
+      font-family: var(--ff-heading);
+      font-size: var(--font-size-sm);
+      padding: 0.125rem 0.25rem;
+      color: var(--text-high-contrast);
+      background-color: var(--tag-bg, red);
+      border-radius: var(--border-radius-1);
+    }
+
+    [data-edible="edible"] {
+      --tag-bg: var(--background-accent-main);
+    }
+
+    [data-edible="toxic"] {
+      --tag-bg: var(--clr-red-500);
+    }
+
+    [data-season="summer"] {
+      --tag-bg: var(--background-accent-main);
+    }
+
+    [data-season="spring"] {
+      --tag-bg: var(--clr-teal-500);
+    }
+
+    [data-season="fall"] {
+      --tag-bg: var(--clr-orange-500);
+    }
   }
 
   .button {
